@@ -4,4 +4,6 @@
 
 {% block content %}
     <h1>Панель управления</h1>
+    <p>Вы можете <a href='{% url "edit" %}'>изменить данные профиля.</a></p>
+    <p>Вы можете <a href='{% url "password_change" %}'> изменить пароль.</a></p>
 {% endblock %}

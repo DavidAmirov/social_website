@@ -6,8 +6,11 @@ from django.contrib.auth.views import (LoginView, LogoutView,
                                        PasswordResetDoneView,
                                        PasswordResetConfirmView,
                                        PasswordResetCompleteView)
+from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import *
+
 
 urlpatterns = [
     #path('login/', user_login, name='user_login'),
@@ -27,5 +30,10 @@ urlpatterns = [
     path('password-reset/complete/', PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
     path('', dashboard, name='dashboard'),
-    path('register/', register, name='register')
+    path('register/', register, name='register'),
+    path('edit', edit, name='edit'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
