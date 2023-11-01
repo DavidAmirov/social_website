@@ -8,6 +8,7 @@
         <p>Неверный логин или пароль. Попробуйте еще раз.</p>
     {% else %}
         <p>Введите логин и пароль.</p>
+        <p><a href='{% url "register" %}'>Зарегистрироваться</a> на портале</p>
     {% endif %}
     <div class='login-form'>
         <form action='{% url "login" %}' method='post'>
