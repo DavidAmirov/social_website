@@ -80,6 +80,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
+
+
 LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
