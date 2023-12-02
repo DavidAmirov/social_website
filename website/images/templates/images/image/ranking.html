@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Просматриваемые публикации{% endblock title %}
+
+{% block content %}
+    <h1>Самые просматриваемые публикации</h1>
+    <ol>
+        {% for image in viewed %}
+        <li>
+            <a href='{{ image.get_absolute_url }}'>
+                {{ image.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+{% endblock content %}
